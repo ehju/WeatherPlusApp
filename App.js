@@ -1,14 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  const [onweather, setWeather] = useState(true);
+  const weather = () => setWeather(true);
+  const plus = () => setWeather(false);
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
       <View style={styles.header}>
-        <Text style={styles.btnText}>Weather</Text>
-        <Text style={styles.btnText}>+</Text>       
+        <TouchableOpacity>
+         <Text style={{...styles.btnText, color : weather ? "white" : "#95c3e7"}}>Weather</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={{...styles.btnText, color : !weather ? "white" : "#95c3e7"}}>+</Text>       
+        </TouchableOpacity>
       </View>
     </View>
   );
