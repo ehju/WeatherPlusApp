@@ -5,8 +5,11 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!1</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
+      <View style={styles.header}>
+        <Text style={styles.btnText}>Weather</Text>
+        <Text style={styles.btnText}>+</Text>       
+      </View>
     </View>
   );
 }
@@ -14,8 +17,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#57A0D9',
+    paddingHorizontal:20,
+  },
+  header: {
+    flexDirection : "row",
+    justifyContent: 'space-between',
+    marginTop:50,
+  },
+  btnText: {
+    fontSize: 40,
+    fontWeight:"600",
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
